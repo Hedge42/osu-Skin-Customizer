@@ -1,0 +1,51 @@
+﻿<Window x:Class="osuSkinCustomizer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:osuSkinCustomizer"
+        mc:Ignorable="d"
+        Title="Neet_o's Skin Manager" Height="477" Width="620" Background="#FF767676" Foreground="#FF764040" MinWidth="300" MinHeight="300">
+    <Grid>
+        <TextBox Name="tbRootFolder" Height="23" Margin="5,10,5,0" TextWrapping="Wrap" Text="Paste skin path here..." VerticalAlignment="Top"/>
+        <Label Name="lblRootFolder" Content="No skin selected" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,33,0,0" Foreground="Black"/>
+        <TabControl Margin="0,69,0,0">
+
+            <TabItem Header="Import">
+                <Grid Background="#FFE5E5E5">
+
+                    <Label Name="lblImportFolder" Content="Import from: " VerticalAlignment="Top" Height="25"/>
+                    <TextBox Name="tbImportFolder" Height="25" VerticalAlignment="Top" Margin="0,30,0,0"/>
+                    <TreeView Name="tvImportTree" Background="#FFC1FFA4" Margin="0,60,0,30" HorizontalAlignment="Left" Width="200" />
+                    <Button Name="btnExectute" Content="Execute!" VerticalAlignment="Bottom" Height="25"/>
+                    <ScrollViewer Margin="205,60,0,30">
+                        <TextBlock Name="txtDetails" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Details" VerticalAlignment="Top"/>
+                    </ScrollViewer>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Generate">
+                <Grid Background="#FFE5E5E5">
+                    <TabControl>
+                        <TabItem Header="Followpoints">
+                            <Grid Background="#FFE5E5E5">
+                                <Button Name="btnExecuteFollowpoints" Content="Replace Followpoints" VerticalAlignment="Bottom" Height="25"/>
+                                <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                    <CheckBox Name ="cbFp0" Content="followpoint-0" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                                    <CheckBox Name ="cbFp1" Content="followpoint-1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                                    <CheckBox Name ="cbFp2" Content="followpoint-2" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                                    <CheckBox Name ="cbFp3" Content="followpoint-3" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                                    <CheckBox Name ="cbFp4" Content="followpoint-4" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                                    <CheckBox Name ="cbFp5" Content="followpoint-5" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                                    <CheckBox Name ="cbFp6" Content="followpoint-6" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                                    <CheckBox Name ="cbFp7" Content="followpoint-7" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                                    <CheckBox Name ="cbFp8" Content="followpoint-8" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                                    <CheckBox Name ="cbFp9" Content="followpoint-9" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                                </StackPanel>
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

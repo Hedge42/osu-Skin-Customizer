@@ -1,0 +1,15 @@
+C:\Users\Tyler\source\repos\osuSkinCustomizer\osuSkinCustomizer\bin\Debug\osuSkinCustomizer.exe.config
+C:\Users\Tyler\source\repos\osuSkinCustomizer\osuSkinCustomizer\bin\Debug\osuSkinCustomizer.exe
+C:\Users\Tyler\source\repos\osuSkinCustomizer\osuSkinCustomizer\bin\Debug\osuSkinCustomizer.pdb
+C:\Users\Tyler\source\repos\osuSkinCustomizer\osuSkinCustomizer\obj\Debug\MainWindow.g.cs
+C:\Users\Tyler\source\repos\osuSkinCustomizer\osuSkinCustomizer\obj\Debug\App.g.cs
+C:\Users\Tyler\source\repos\osuSkinCustomizer\osuSkinCustomizer\obj\Debug\osuSkinCustomizer_MarkupCompile.cache
+C:\Users\Tyler\source\repos\osuSkinCustomizer\osuSkinCustomizer\obj\Debug\osuSkinCustomizer_MarkupCompile.lref
+C:\Users\Tyler\source\repos\osuSkinCustomizer\osuSkinCustomizer\obj\Debug\MainWindow.baml
+C:\Users\Tyler\source\repos\osuSkinCustomizer\osuSkinCustomizer\obj\Debug\osuSkinCustomizer.g.resources
+C:\Users\Tyler\source\repos\osuSkinCustomizer\osuSkinCustomizer\obj\Debug\osuSkinCustomizer.Properties.Resources.resources
+C:\Users\Tyler\source\repos\osuSkinCustomizer\osuSkinCustomizer\obj\Debug\osuSkinCustomizer.csproj.GenerateResource.cache
+C:\Users\Tyler\source\repos\osuSkinCustomizer\osuSkinCustomizer\obj\Debug\osuSkinCustomizer.csproj.CoreCompileInputs.cache
+C:\Users\Tyler\source\repos\osuSkinCustomizer\osuSkinCustomizer\obj\Debug\osuSkinCustomizer.exe
+C:\Users\Tyler\source\repos\osuSkinCustomizer\osuSkinCustomizer\obj\Debug\osuSkinCustomizer.pdb
+C:\Users\Tyler\source\repos\osuSkinCustomizer\osuSkinCustomizer\obj\Debug\osuSkinCustomizer.csprojAssemblyReference.cache
