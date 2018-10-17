@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.IO;
 using System.Windows;
@@ -54,7 +50,7 @@ namespace osuSkinCustomizer
             string blankPng = GetBlankPNG();
 
             // copy each 
-            string backupFolder = FileHandler.CreateBackupFolder(FileHandler.rootFolder);
+            string backupFolder = FileHandler.CreateBackupFolder(FileHandler.CurrentSkinFolder);
             foreach (string fp in followpoints)
             {
                 string dest = backupFolder + "\\" + Path.GetFileName(fp);
@@ -69,7 +65,7 @@ namespace osuSkinCustomizer
                 // delete followpoint-x.png, if it's there
                 // replace it with biggest, renamed
 
-                string fileName = FileHandler.rootFolder + "\\followpoint-" + i + ".png";
+                string fileName = FileHandler.CurrentSkinFolder + "\\followpoint-" + i + ".png";
 
                 if ((bool)cbs[i].IsChecked)
                 {
@@ -89,8 +85,8 @@ namespace osuSkinCustomizer
 
         private static string[] GetFollowpoints()
         {
-            string[] allFiles = FileHandler.GetFiles(FileHandler.rootFolder);
-            string[] followpoints = FileHandler.GetGameplayFollowpoints(allFiles);
+            string[] allFiles = FileHandler.GetFiles(FileHandler.CurrentSkinFolder);
+            string[] followpoints = ElementFinder.GetGameplayFollowpoints(allFiles);
             string[] relevantFps = Array.FindAll(followpoints, fp => Path.GetFileName(fp).ToLower() != "followpoint.png");
             return relevantFps;
         }
@@ -117,7 +113,7 @@ namespace osuSkinCustomizer
             // should add something later to ensure that it chooses the right thing...
             // TODO: find blank file
 
-            string[] imgFiles = FileHandler.GetImageFiles(FileHandler.rootFolder);
+            string[] imgFiles = FileHandler.GetImageFiles(FileHandler.CurrentSkinFolder);
             foreach (string file in imgFiles)
             {
                 if (IsBlank(file))

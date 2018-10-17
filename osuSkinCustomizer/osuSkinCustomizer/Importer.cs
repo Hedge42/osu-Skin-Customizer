@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 using System.Windows;
 using MyExtensions;
@@ -46,71 +43,71 @@ namespace osuSkinCustomizer
             tvImport.Items.Add(ssStandard.item);
             tvImport.Items.Add(ssSounds.item);
 
-            sList.Add(new Section("Main Menu", ssInterface, FileHandler.GetInterfaceMainMenu));
-            sList.Add(new Section("Button", ssInterface, FileHandler.GetInterfaceButton));
-            sList.Add(new Section("Cursor", ssInterface, FileHandler.GetInterfaceCursor));
-            sList.Add(new Section("Mod Icons", ssInterface, FileHandler.GetInterfaceModIcons));
-            sList.Add(new Section("Offset Wizard", ssInterface, FileHandler.GetInterfaceOffsetWizard));
+            sList.Add(new Section("Main Menu", ssInterface, ElementFinder.GetInterfaceMainMenu));
+            sList.Add(new Section("Button", ssInterface, ElementFinder.GetInterfaceButton));
+            sList.Add(new Section("Cursor", ssInterface, ElementFinder.GetInterfaceCursor));
+            sList.Add(new Section("Mod Icons", ssInterface, ElementFinder.GetInterfaceModIcons));
+            sList.Add(new Section("Offset Wizard", ssInterface, ElementFinder.GetInterfaceOffsetWizard));
 
             Section ssPlayfield = sList.Add<Section>(new Section("Playfield", ssInterface));
-            sList.Add(new Section("Playfield", ssPlayfield, FileHandler.GetInterfacePlayfield));
-            sList.Add(new Section("Countdown", ssPlayfield, FileHandler.GetInterfaceCountdown));
-            sList.Add(new Section("Hit bursts", ssPlayfield, FileHandler.GetInterfaceHitBursts));
-            sList.Add(new Section("Input Overlay", ssPlayfield, FileHandler.GetInterfaceInputOverlay));
-            sList.Add(new Section("Pause Screen", ssPlayfield, FileHandler.GetInterfacePauseScreen));
-            sList.Add(new Section("Scorebar", ssPlayfield, FileHandler.GetInterfaceScorebar));
+            sList.Add(new Section("Playfield", ssPlayfield, ElementFinder.GetInterfacePlayfield));
+            sList.Add(new Section("Countdown", ssPlayfield, ElementFinder.GetInterfaceCountdown));
+            sList.Add(new Section("Hit bursts", ssPlayfield, ElementFinder.GetInterfaceHitBursts));
+            sList.Add(new Section("Input Overlay", ssPlayfield, ElementFinder.GetInterfaceInputOverlay));
+            sList.Add(new Section("Pause Screen", ssPlayfield, ElementFinder.GetInterfacePauseScreen));
+            sList.Add(new Section("Scorebar", ssPlayfield, ElementFinder.GetInterfaceScorebar));
 
-            Section ssScoreNumbers = sList.Add<Section>(new Section("Score Numbers", ssPlayfield, FileHandler.GetInterfaceScoreNumbers));
-            sList.Add(new Section(".ini ScorePrefix", ssScoreNumbers, Skinini.Type.ScorePrefix));
-            sList.Add(new Section(".ini ScoreOverlap", ssScoreNumbers, Skinini.Type.ScoreOverlap));
+            Section ssScoreNumbers = sList.Add<Section>(new Section("Score Numbers", ssPlayfield, ElementFinder.GetInterfaceScoreNumbers));
+            sList.Add(new Section(".ini ScorePrefix", ssScoreNumbers, Skinini.Option.ScorePrefix));
+            sList.Add(new Section(".ini ScoreOverlap", ssScoreNumbers, Skinini.Option.ScoreOverlap));
 
-            Section ssComboNumbers = sList.Add<Section>(new Section("Combo Numbers", ssPlayfield, FileHandler.GetInterfaceComboNumbers));
-            sList.Add(new Section(".ini ComboOverlap", ssComboNumbers, Skinini.Type.ComboOverlap));
-            sList.Add(new Section(".ini ComboPrefix", ssComboNumbers, Skinini.Type.ComboPrefix));
+            Section ssComboNumbers = sList.Add<Section>(new Section("Combo Numbers", ssPlayfield, ElementFinder.GetInterfaceComboNumbers));
+            sList.Add(new Section(".ini ComboOverlap", ssComboNumbers, Skinini.Option.ComboOverlap));
+            sList.Add(new Section(".ini ComboPrefix", ssComboNumbers, Skinini.Option.ComboPrefix));
 
-            sList.Add(new Section("Ranking", ssInterface, FileHandler.GetInterfaceRanking));
-            sList.Add(new Section("Score Entry", ssInterface, FileHandler.GetInterfaceScoreEntry));
+            sList.Add(new Section("Ranking", ssInterface, ElementFinder.GetInterfaceRanking));
+            sList.Add(new Section("Score Entry", ssInterface, ElementFinder.GetInterfaceScoreEntry));
 
-            Section ssSongSelect = sList.Add<Section>(new Section("Song Selection", ssInterface, FileHandler.GetInterfaceSongSelection));
-            sList.Add(new Section("Mode Select", ssSongSelect, FileHandler.GetInterfaceModeSelect));
-            sList.Add(new Section("Star2", ssSongSelect, FileHandler.GetInterfaceSongSelectionStar2));
+            Section ssSongSelect = sList.Add<Section>(new Section("Song Selection", ssInterface, ElementFinder.GetInterfaceSongSelection));
+            sList.Add(new Section("Mode Select", ssSongSelect, ElementFinder.GetInterfaceModeSelect));
+            sList.Add(new Section("Star2", ssSongSelect, ElementFinder.GetInterfaceSongSelectionStar2));
 
-            sList.Add(new Section("Comboburst", ssStandard, FileHandler.GetGameplayComboBurst));
+            sList.Add(new Section("Comboburst", ssStandard, ElementFinder.GetGameplayComboBurst));
 
-            Section ssDefaultNumbers = sList.Add<Section>(new Section("Default Numbers", ssStandard, FileHandler.GetGameplayDefaultNumbers));
-            sList.Add(new Section(".ini HitCircleOverlap", ssDefaultNumbers, Skinini.Type.HitCircleOverlap));
-            sList.Add(new Section(".ini HitCirclePrefix", ssDefaultNumbers, Skinini.Type.HitCirclePrefix));
+            Section ssDefaultNumbers = sList.Add<Section>(new Section("Default Numbers", ssStandard, ElementFinder.GetGameplayDefaultNumbers));
+            sList.Add(new Section(".ini HitCircleOverlap", ssDefaultNumbers, Skinini.Option.HitCircleOverlap));
+            sList.Add(new Section(".ini HitCirclePrefix", ssDefaultNumbers, Skinini.Option.HitCirclePrefix));
 
-            Section ssHitCircle = sList.Add<Section>(new Section("Hit Circle", ssStandard, FileHandler.GetGameplayHitCircles));
-            sList.Add(new Section("Approach Circle", ssHitCircle, FileHandler.GetGameplayApproachCircle));
-            sList.Add(new Section("Followpoints", ssHitCircle, FileHandler.GetGameplayFollowpoints));
-            sList.Add(new Section(".ini ComboColors", ssHitCircle, Skinini.Type.ComboColours));
+            Section ssHitCircle = sList.Add<Section>(new Section("Hit Circle", ssStandard, ElementFinder.GetGameplayHitCircles));
+            sList.Add(new Section("Approach Circle", ssHitCircle, ElementFinder.GetGameplayApproachCircle));
+            sList.Add(new Section("Followpoints", ssHitCircle, ElementFinder.GetGameplayFollowpoints));
+            sList.Add(new Section(".ini ComboColors", ssHitCircle, Skinini.Option.ComboColours));
 
-            Section ssSlider = sList.Add<Section>(new Section("Slider", ssStandard, FileHandler.GetGameplaySlider));
-            sList.Add(new Section(".ini SliderBall", ssSlider, Skinini.Type.SliderBall));
-            sList.Add(new Section(".ini SliderBorder", ssSlider, Skinini.Type.SliderBorder));
-            sList.Add(new Section(".ini SliderTrackOverride", ssSlider, Skinini.Type.SliderTrackOverride));
+            Section ssSlider = sList.Add<Section>(new Section("Slider", ssStandard, ElementFinder.GetGameplaySlider));
+            sList.Add(new Section(".ini SliderBall", ssSlider, Skinini.Option.SliderBall));
+            sList.Add(new Section(".ini SliderBorder", ssSlider, Skinini.Option.SliderBorder));
+            sList.Add(new Section(".ini SliderTrackOverride", ssSlider, Skinini.Option.SliderTrackOverride));
 
-            Section ssSpinner = sList.Add<Section>(new Section("Spinner", ssStandard, FileHandler.GetGameplaySpinner));
-            sList.Add(new Section(".ini Spinner Background", ssSpinner, Skinini.Type.SpinnerBackground));
+            Section ssSpinner = sList.Add<Section>(new Section("Spinner", ssStandard, ElementFinder.GetGameplaySpinner));
+            sList.Add(new Section(".ini Spinner Background", ssSpinner, Skinini.Option.SpinnerBackground));
 
-            sList.Add(new Section("Particles", ssStandard, FileHandler.GetGameplayParticles));
+            sList.Add(new Section("Particles", ssStandard, ElementFinder.GetGameplayParticles));
 
-            sList.Add(new Section("Main Menu", ssSounds, FileHandler.GetMainMenuSounds));
-            sList.Add(new Section("Keys", ssSounds, FileHandler.GetKeysSounds));
-            sList.Add(new Section("Clicks", ssSounds, FileHandler.GetClicksSounds));
-            sList.Add(new Section("Hover", ssSounds, FileHandler.GetHoverSounds));
-            sList.Add(new Section("Drag", ssSounds, FileHandler.GetDragSounds));
-            sList.Add(new Section("Multiplayer", ssSounds, FileHandler.GetMultiplayerSounds));
-            sList.Add(new Section("Countdown", ssSounds, FileHandler.GetCountdownSounds));
-            sList.Add(new Section("Metronome", ssSounds, FileHandler.GetMetronomeSounds));
-            sList.Add(new Section("Gameplay", ssSounds, FileHandler.GetGameplaySounds));
-            sList.Add(new Section("Pause Screen", ssSounds, FileHandler.GetPauseScreenSounds));
+            sList.Add(new Section("Main Menu", ssSounds, ElementFinder.GetMainMenuSounds));
+            sList.Add(new Section("Keys", ssSounds, ElementFinder.GetKeysSounds));
+            sList.Add(new Section("Clicks", ssSounds, ElementFinder.GetClicksSounds));
+            sList.Add(new Section("Hover", ssSounds, ElementFinder.GetHoverSounds));
+            sList.Add(new Section("Drag", ssSounds, ElementFinder.GetDragSounds));
+            sList.Add(new Section("Multiplayer", ssSounds, ElementFinder.GetMultiplayerSounds));
+            sList.Add(new Section("Countdown", ssSounds, ElementFinder.GetCountdownSounds));
+            sList.Add(new Section("Metronome", ssSounds, ElementFinder.GetMetronomeSounds));
+            sList.Add(new Section("Gameplay", ssSounds, ElementFinder.GetGameplaySounds));
+            sList.Add(new Section("Pause Screen", ssSounds, ElementFinder.GetPauseScreenSounds));
 
             Section ssHitSounds = sList.Add<Section>(new Section("Hit Sounds", ssSounds));
-            sList.Add(new Section("Normal Sets", ssHitSounds, FileHandler.GetNormalHitSet));
-            sList.Add(new Section("Spinner Set", ssHitSounds, FileHandler.GetSpinnerSet));
-            sList.Add(new Section("Taiko Set", ssHitSounds, FileHandler.GetTaikoSet));
+            sList.Add(new Section("Normal Sets", ssHitSounds, ElementFinder.GetNormalHitSet));
+            sList.Add(new Section("Spinner Set", ssHitSounds, ElementFinder.GetSpinnerSet));
+            sList.Add(new Section("Taiko Set", ssHitSounds, ElementFinder.GetTaikoSet));
 
             sections = sList.ToArray();
         }
@@ -122,7 +119,7 @@ namespace osuSkinCustomizer
             string[] rootFiles = GetSelectedFilesInRoot();
 
             // Create backup by default
-            string backupFolder = FileHandler.CreateBackupFolder(FileHandler.rootFolder);
+            string backupFolder = FileHandler.CreateBackupFolder(FileHandler.CurrentSkinFolder);
 
             // Move files that will be replaced in the root folder to the backup folder
             foreach (string file in rootFiles)
@@ -132,7 +129,7 @@ namespace osuSkinCustomizer
 
                 if (GetSelectedIniTypes().Length > 0)
                 {
-                    string iniPath = Skinini.GetIniPath(FileHandler.rootFolder);
+                    string iniPath = Skinini.GetIniPath(FileHandler.CurrentSkinFolder);
                     string iniFileName = Path.GetFileName(iniPath);
                     string iniDestination = backupFolder + "\\" + iniFileName;
                     File.Copy(iniPath, iniDestination);
@@ -143,25 +140,25 @@ namespace osuSkinCustomizer
             foreach (string file in importFiles)
             {
                 string fileName = Path.GetFileName(file);
-                string dest = FileHandler.rootFolder + "\\" + fileName;
+                string dest = FileHandler.CurrentSkinFolder + "\\" + fileName;
                 File.Copy(file, dest);
             }
 
             // Replace lines in skin.ini
-            Skinini.Type[] selectedTypes = GetSelectedIniTypes();
-            foreach (Skinini.Type type in selectedTypes)
+            Skinini.Option[] selectedTypes = GetSelectedIniTypes();
+            foreach (Skinini.Option type in selectedTypes)
             {
-                Skinini.Replace(type, importFolder, FileHandler.rootFolder);
+                Skinini.Replace(type, importFolder, FileHandler.CurrentSkinFolder);
             }
         }
 
         /// <summary> Returns the type of each ini parameter that has been selected </summary>
-        private Skinini.Type[] GetSelectedIniTypes()
+        private Skinini.Option[] GetSelectedIniTypes()
         {
-            List<Skinini.Type> selectedTypes = new List<Skinini.Type>();
+            List<Skinini.Option> selectedTypes = new List<Skinini.Option>();
             foreach (Section s in sections)
             {
-                if (s.iniType != Skinini.Type.None && (bool)s.checkBox.IsChecked)
+                if (s.iniType != Skinini.Option.None && (bool)s.checkBox.IsChecked)
                 {
                     selectedTypes.Add(s.iniType);
                 }
@@ -216,8 +213,8 @@ namespace osuSkinCustomizer
 
             text += "\r\n";
 
-            Skinini.Type[] iniTypes = GetSelectedIniTypes();
-            foreach (Skinini.Type type in iniTypes)
+            Skinini.Option[] iniTypes = GetSelectedIniTypes();
+            foreach (Skinini.Option type in iniTypes)
                 text += "skin.ini " + type.ToString() + "\r\n";
 
             txtDetails.Text = text;
@@ -252,7 +249,7 @@ namespace osuSkinCustomizer
         /// <summary> Runs GetSelectedFiles(rootFiles) </summary>
         private string[] GetSelectedFilesInRoot()
         {
-            string[] rootFiles = FileHandler.GetFiles(FileHandler.rootFolder);
+            string[] rootFiles = FileHandler.GetFiles(FileHandler.CurrentSkinFolder);
             return GetSelectedFiles(rootFiles);
         }
 

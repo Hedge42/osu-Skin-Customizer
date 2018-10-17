@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 
 namespace MyExtensions
@@ -76,6 +73,16 @@ namespace MyExtensions
         {
             list.Add(element);
             return element;
+        }
+
+        public static List<T> ToList<T>(this T[] arr)
+        {
+            List<T> list = new List<T>();
+            foreach (T t in arr)
+            {
+                list.Add(t);
+            }
+            return list;
         }
 
         // https://stackoverflow.com/questions/1547252/how-do-i-concatenate-two-arrays-in-c

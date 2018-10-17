@@ -10,7 +10,7 @@
         <TextBox Name="tbRootFolder" Height="23" Margin="5,10,5,0" TextWrapping="Wrap" Text="Paste skin path here..." VerticalAlignment="Top"/>
         <Label Name="lblRootFolder" Content="No skin selected" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,33,0,0" Foreground="Black"/>
         <TabControl Margin="0,69,0,0">
-
+            <!--Here-->
             <TabItem Header="Import">
                 <Grid Background="#FFE5E5E5">
 
@@ -23,13 +23,13 @@
                     </ScrollViewer>
                 </Grid>
             </TabItem>
-            <TabItem Header="Generate">
+            <TabItem Header="Generate" IsSelected="True">
                 <Grid Background="#FFE5E5E5">
                     <TabControl>
                         <TabItem Header="Followpoints">
                             <Grid Background="#FFE5E5E5">
                                 <Button Name="btnExecuteFollowpoints" Content="Replace Followpoints" VerticalAlignment="Bottom" Height="25"/>
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                <StackPanel Orientation="Vertical" CanVerticallyScroll="True" HorizontalAlignment="Left" VerticalAlignment="Top">
                                     <CheckBox Name ="cbFp0" Content="followpoint-0" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
                                     <CheckBox Name ="cbFp1" Content="followpoint-1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
                                     <CheckBox Name ="cbFp2" Content="followpoint-2" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
@@ -41,6 +41,41 @@
                                     <CheckBox Name ="cbFp8" Content="followpoint-8" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
                                     <CheckBox Name ="cbFp9" Content="followpoint-9" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
                                 </StackPanel>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Hitcircle" IsSelected="True">
+                            <Grid Background="#FFE5E5E5">
+                                <StackPanel Orientation="Vertical" Margin="0,0,0,30" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                    <CheckBox Name="cbHitcircle" Content="Hitcircle" IsChecked="True" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                    <CheckBox Name="cbHitcircleOverlay" Content="HitcircleOverlay" IsChecked="True" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                    <CheckBox Name="cbDefaultNumbers" Content="DefaultNumbers" IsChecked="True" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                    <CheckBox Name="cbFollowpoint" Content="Followpoint" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                    <CheckBox Name="cbApproachCircle" Content="ApproachCircle" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                    <CheckBox Name="cbSliderStartCircle" Content="SliderStartCircle" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                    <CheckBox Name="cbSliderEndCircle" Content="SliderEndCircle" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                </StackPanel>
+
+                                <Button Name="btnExecuteHitcircles" Content="Make Changes" VerticalAlignment="Bottom" Height="25"/>
+                                <Grid Name="grdHitcircle" Height="128" Width="128" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,50,40,0" Background="Black">
+                                    <Image Name="imgHitcircle" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <Image Name="imgHitcircleOverlay" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
+                                <StackPanel Orientation="Vertical" Width="235" Height="50" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,-50,0">
+                                    <Label Content="         Background Color" HorizontalAlignment="Left"/>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="24" VerticalAlignment="Top" Width="230">
+                                        <RadioButton Name="rbBlack" Content=" Black " IsChecked="True"/>
+                                        <RadioButton Name="rbGray" Content="Gray "/>
+                                        <RadioButton Name="rbWhite" Content="White"/>
+                                    </StackPanel>
+                                </StackPanel>
+                                <Button Name="btnShowHitcircle" Content="Update" HorizontalAlignment="Right" VerticalAlignment="Top" Width="162" Margin="0,183,25,0"/>
+                                <Expander Header="Hitcircles" HorizontalAlignment="Left" Height="100" Margin="310,5,0,0" VerticalAlignment="Top" Width="100">
+                                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                        <StackPanel Name="spHitcircles" Orientation="Vertical">
+                                            <!--These should be generated via code-->
+                                        </StackPanel>
+                                    </ScrollViewer>
+                                </Expander>
                             </Grid>
                         </TabItem>
                     </TabControl>

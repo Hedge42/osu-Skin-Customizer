@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -18,7 +15,7 @@ namespace osuSkinCustomizer
         public List<Section> children;
 
         public Func<string[], string[]> searchFunction;
-        public Skinini.Type iniType = Skinini.Type.None;
+        public Skinini.Option iniType = Skinini.Option.None;
 
         public Section(string text, Section parent, Func<string[], string[]> _searchFunction)
         {
@@ -44,7 +41,7 @@ namespace osuSkinCustomizer
 
             searchFunction = _searchFunction;
         }
-        public Section(string text, Section parent, Skinini.Type type)
+        public Section(string text, Section parent, Skinini.Option type)
         {
             children = new List<Section>();
 

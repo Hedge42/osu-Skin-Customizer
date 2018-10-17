@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.IO;
 using MyExtensions;
-using System.Windows;
+using System.Windows.Media;
 
 namespace osuSkinCustomizer
 {
     public static class Skinini
     {
-        public enum Type
+        public enum Option
         {
             None,
 
@@ -57,9 +53,9 @@ namespace osuSkinCustomizer
             ComboOverlap,
         }
 
-        public static void Replace(Type t, string fromFolder, string toFolder)
+        public static void Replace(Option t, string fromFolder, string toFolder)
         {
-            if (t == Type.ComboColours)
+            if (t == Option.ComboColours)
             {
                 ReplaceComboColors(fromFolder, toFolder);
                 return;
@@ -104,17 +100,17 @@ namespace osuSkinCustomizer
         public static string GetComboPrefix(string[] files)
         {
             string folder = new FileInfo(files[0]).Directory.FullName;
-            return GetValue(GetLine(Type.ComboPrefix, folder));
+            return GetValue(GetLine(Option.ComboPrefix, folder));
         }
         public static string GetHitCirclePrefix(string[] files)
         {
             string folder = new FileInfo(files[0]).Directory.FullName;
-            return GetValue(GetLine(Type.HitCirclePrefix, folder));
+            return GetValue(GetLine(Option.HitCirclePrefix, folder));
         }
         public static string GetScorePrefix(string[] files)
         {
             string folder = new FileInfo(files[0]).Directory.FullName;
-            return GetValue(GetLine(Type.ScorePrefix, folder));
+            return GetValue(GetLine(Option.ScorePrefix, folder));
         }
 
         private static void ReplaceComboColors(string fromFolder, string toFolder)
@@ -185,7 +181,7 @@ namespace osuSkinCustomizer
         }
 
         /// <summary> Returns the full line from the folder's skin.ini where the Type == t </summary>
-        private static string GetLine(Type t, string folder)
+        private static string GetLine(Option t, string folder)
         {
             string[] lines = GetRealLines(folder);
             foreach (string line in lines)
@@ -213,6 +209,28 @@ namespace osuSkinCustomizer
                     return i;
             }
             return -1;
+        }
+
+        public static List<Color> GetComboColors()
+        {
+            List<Color> comboColors = new List<Color>();
+            string[] comboColorLines = GetComboColorLines(GetRealLines(FileHandler.CurrentSkinFolder));
+            foreach (string line in comboColorLines)
+            {
+                string value = GetValue(line);
+                string[] colorValues = value.Split(',');
+
+                byte[] rgb = new byte[] { 0, 0, 0 };
+
+                for (int i = 0; i < 3; i++)
+                {
+                    byte.TryParse(colorValues[i], out rgb[i]);
+                }
+
+                comboColors.Add(Color.FromRgb(rgb[0], rgb[1], rgb[2]));
+            }
+
+            return comboColors;
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Controls;
 using System.Collections.Generic;
 using MyExtensions;
+using System;
 
 namespace osuSkinCustomizer
 {
@@ -29,9 +30,26 @@ namespace osuSkinCustomizer
             generator = new Generator();
 
             FollowpointEditor.Initialize();
+            HitcircleEditor.Initialize();
 
             // Set handlers...
-            tbRootFolder.TextChanged += FileHandler.RootFolderTextChangedEventHandler;
+            tbRootFolder.TextChanged += FileHandler.CurrentSkinTextChanged;
+
+
+            // Experimental...
+
+            // https://stackoverflow.com/questions/3991933/get-path-for-my-exe
+            string exePath = System.Reflection.Assembly.GetEntryAssembly().Location;
+
+            // is the .exe in a skin folder?
+            // get the directory from the file...
+            string exeFolder = Path.GetDirectoryName(exePath);
+
+            if (exeFolder.IsSkin())
+            {
+                // MessageBox.Show("Hooray!");
+                // FileHandler.currentSkinFolder = exeFolder;
+            }
         }
     }
 }
