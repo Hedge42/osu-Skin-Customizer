@@ -9,16 +9,17 @@ using System;
 
 namespace osuSkinCustomizer
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    /* TODO...
+     * Remove generator. Stick the files in a folder so they aren't lost forever... Then remove functionality from xaml
+    */ 
+
+
     public partial class MainWindow : Window
     {
         public static MainWindow instance;
 
         // tabs
         private Importer importer;
-        private Generator generator;
 
         public MainWindow()
         {
@@ -27,10 +28,6 @@ namespace osuSkinCustomizer
             // Set class instances...
             instance = this;
             importer = new Importer();
-            generator = new Generator();
-
-            FollowpointEditor.Initialize();
-            HitcircleEditor.Initialize();
 
             // Set handlers...
             tbRootFolder.TextChanged += FileHandler.CurrentSkinTextChanged;

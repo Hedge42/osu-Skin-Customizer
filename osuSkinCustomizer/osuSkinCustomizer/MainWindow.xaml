@@ -9,20 +9,21 @@
     <Grid>
         <TextBox Name="tbRootFolder" Height="23" Margin="5,10,5,0" TextWrapping="Wrap" Text="Paste skin path here..." VerticalAlignment="Top"/>
         <Label Name="lblRootFolder" Content="No skin selected" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,33,0,0" Foreground="Black"/>
-        <TabControl Margin="0,69,0,0">
-            <!--Here-->
-            <TabItem Header="Import">
-                <Grid Background="#FFE5E5E5">
+        <!--<TabControl Margin="0,69,0,0">-->
+        <!--Here-->
+        <!--<TabItem Header="Import">-->
+        <Grid Background="#FFE5E5E5" Margin="0,70,0,0">
 
-                    <Label Name="lblImportFolder" Content="Import from: " VerticalAlignment="Top" Height="25"/>
-                    <TextBox Name="tbImportFolder" Height="25" VerticalAlignment="Top" Margin="0,30,0,0"/>
-                    <TreeView Name="tvImportTree" Background="#FFC1FFA4" Margin="0,60,0,30" HorizontalAlignment="Left" Width="200" />
-                    <Button Name="btnExectute" Content="Execute!" VerticalAlignment="Bottom" Height="25"/>
-                    <ScrollViewer Margin="205,60,0,30">
-                        <TextBlock Name="txtDetails" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Details" VerticalAlignment="Top"/>
-                    </ScrollViewer>
-                </Grid>
-            </TabItem>
+            <Label Name="lblImportFolder" Content="Import from: " VerticalAlignment="Top" Height="25"/>
+            <TextBox Name="tbImportFolder" Height="25" VerticalAlignment="Top" Margin="0,30,0,0"/>
+            <TreeView Name="tvImportTree" Background="#FFC1FFA4" Margin="0,60,0,30" HorizontalAlignment="Left" Width="200" />
+            <Button Name="btnExectute" Content="Execute!" VerticalAlignment="Bottom" Height="25"/>
+            <ScrollViewer Margin="205,60,0,30">
+                <TextBlock Name="txtDetails" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Details" VerticalAlignment="Top"/>
+            </ScrollViewer>
+        </Grid>
+        <!--</TabItem>-->
+        <!-- Generator tabs
             <TabItem Header="Generate" IsSelected="True">
                 <Grid Background="#FFE5E5E5">
                     <TabControl>
@@ -72,7 +73,6 @@
                                 <Expander Header="Hitcircles" HorizontalAlignment="Left" Height="100" Margin="310,5,0,0" VerticalAlignment="Top" Width="100">
                                     <ScrollViewer VerticalScrollBarVisibility="Auto">
                                         <StackPanel Name="spHitcircles" Orientation="Vertical">
-                                            <!--These should be generated via code-->
                                         </StackPanel>
                                     </ScrollViewer>
                                 </Expander>
@@ -81,6 +81,7 @@
                     </TabControl>
                 </Grid>
             </TabItem>
-        </TabControl>
+            -->
+        <!--</TabControl>-->
     </Grid>
 </Window>
